@@ -1,6 +1,5 @@
+import { PORT } from './common/config';
 import { app as server } from './app';
-
-const PORT = 4000;
 
 /**
  * Run the server!
