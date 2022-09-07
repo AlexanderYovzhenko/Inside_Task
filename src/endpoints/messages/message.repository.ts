@@ -23,8 +23,6 @@ const getMessages = async (
  * @returns Promise<IMessage>
  */
 const addMessage = async (newMessage: IMessage): Promise<IMessage> => {
-  console.log(newMessage);
-
   const message = await getRepository(Message).save(newMessage);
 
   return message;

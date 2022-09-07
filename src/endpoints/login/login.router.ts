@@ -1,5 +1,5 @@
 import { FastifyPluginAsync } from 'fastify';
-import { addLoginRouter } from './login.controller';
+import loginSchema from './login.schema';
 
 /**
  * Listens to login routes
@@ -7,7 +7,7 @@ import { addLoginRouter } from './login.controller';
  * @returns void
  */
 const loginRoutes: FastifyPluginAsync = async (app): Promise<void> => {
-  app.post('/login', addLoginRouter);
+  app.post('/login', loginSchema.loginOpts);
 };
 
 export default loginRoutes;
