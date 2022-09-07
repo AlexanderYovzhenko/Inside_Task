@@ -7,7 +7,6 @@ dotenv.config({
 
 const PORT = process.env.PORT || 4000,
   NODE_ENV = process.env.NODE_ENV,
-  MONGO_CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING,
   JWT_SECRET_KEY = process.env.JWT_SECRET_KEY,
   PORT_DB = process.env.PORT_DB,
   POSTGRES_DB = process.env.POSTGRES_DB,
@@ -19,7 +18,6 @@ const PORT = process.env.PORT || 4000,
 export {
   PORT,
   NODE_ENV,
-  MONGO_CONNECTION_STRING,
   JWT_SECRET_KEY,
   PORT_DB,
   POSTGRES_DB,
