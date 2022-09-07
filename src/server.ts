@@ -1,5 +1,7 @@
 import { PORT } from './common/config';
 import { app as server } from './app';
+import { createConnection } from 'typeorm';
+import config from './ormconfig';
 
 /**
  * Run the server!
@@ -9,6 +11,7 @@ import { app as server } from './app';
  */
 const startServer = async () => {
   try {
+    await createConnection(config);
     server.listen(PORT, '0.0.0.0', () =>
       console.info(`App is running on http://localhost:${PORT}`)
     );
