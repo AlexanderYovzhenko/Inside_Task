@@ -5,7 +5,7 @@ interface IUser {
 }
 
 interface IMessage {
-  name: string;
+  name?: string;
   message: string;
 }
 
