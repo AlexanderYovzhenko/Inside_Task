@@ -13,9 +13,6 @@ const user = {
 const loginOpts = {
   schema: {
     body: user,
-    response: {
-      201: user,
-    },
   },
   handler: addLoginRouter,
 };
