@@ -5,8 +5,10 @@ interface IUser {
 }
 
 interface IMessage {
+  id?: string;
   name?: string;
   message: string;
+  userId?: string;
 }
 
 export { IUser, IMessage };

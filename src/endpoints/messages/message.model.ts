@@ -9,8 +9,13 @@ class Message {
   @Column()
   message!: string;
 
-  @ManyToOne(() => User, (user: User) => user.messages)
-  user: User;
+  @ManyToOne(() => User, (user) => user.id, {
+    eager: true,
+    nullable: true,
+    onDelete: 'SET NULL',
+    onUpdate: 'CASCADE',
+  })
+  userId!: string;
 }
 
 export default Message;

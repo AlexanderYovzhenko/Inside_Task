@@ -24,8 +24,9 @@ const messageRouter = async (
   reply: FastifyReply
 ) => {
   const message: IMessage = new Message();
-  message.name = request.body.name;
+  message.name = request.body.name || '';
   message.message = request.body.message;
+  message.userId = request.body.userId;
 
   const response = await messageService.messageService(message);
 

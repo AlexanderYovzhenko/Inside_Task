@@ -7,6 +7,7 @@ const message = {
     id: { type: 'string' },
     name: { type: 'string' },
     message: { type: 'string' },
+    userId: { type: 'string' },
   },
 };
 
