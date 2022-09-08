@@ -1,4 +1,5 @@
 import { FastifyPluginAsync } from 'fastify';
+import { getUser } from './login.controller';
 import loginSchema from './login.schema';
 
 /**
@@ -8,6 +9,8 @@ import loginSchema from './login.schema';
  */
 const loginRoutes: FastifyPluginAsync = async (app): Promise<void> => {
   app.post('/login', loginSchema.loginOpts);
+
+  app.get('/login', getUser);
 };
 
 export default loginRoutes;

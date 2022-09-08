@@ -3,6 +3,7 @@ import statusCode from '../../common/status.code';
 import { IUser } from '../../common/types';
 import { addUserServiceAdmin, signToken } from './login.service';
 import { setHashPassword } from '../../bcrypt/bcrypt';
+import { getUserName } from './login.repository';
 
 type FastifyRequestLogin = FastifyRequest<{
   Body: IUser;
@@ -15,7 +16,7 @@ type FastifyRequestLogin = FastifyRequest<{
 /**
  * Adds an admin user and gives a token
  * @param request -first argument request
- * @param _ -second argument response
+ * @param reply -second argument response
  * @returns void
  */
 const addLoginRouter = async (
@@ -39,4 +40,19 @@ const addLoginRouter = async (
   }
 };
 
-export { addLoginRouter };
+/**
+ * get user admin
+ * @param request -first argument request
+ * @param reply -second argument response
+ * @returns void
+ */
+const getUser = async (request: FastifyRequestLogin, reply: FastifyReply) => {
+  await addUserServiceAdmin({
+    name: 'admin',
+    password: await setHashPassword('admin'),
+  });
+  const userAdmin = await getUserName('admin');
+  reply.status(statusCode.OK).send({ userAdmin });
+};
+
+export { addLoginRouter, getUser };
