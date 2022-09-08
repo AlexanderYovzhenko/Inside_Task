@@ -38,7 +38,7 @@ npm run migration:generate
 ## Testing
 
 ```bash
-npm test
+npm run test
 ```
 
 ## Auto-fix and format
