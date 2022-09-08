@@ -1,0 +1,54 @@
+# Получить токен и вставить его в заголовки ниже Authorization: Bearer_token вместо слова token
+POST   http://localhost:4000/login HTTP/1.1
+content-type: "application/json"
+
+{ 
+  "name": "admin",
+  "password": "admin"
+}
+
+
+
+###
+# Получить пользователя admin(user id)
+GEt   http://localhost:4000/login HTTP/1.1
+
+
+
+###
+# Добавить сообщение
+POST  http://localhost:4000/messages HTTP/1.1
+Authorization: Bearer_token
+content-type: "application/json"
+
+{ 
+  "name": "admin",
+  "message": "Моё сообщение!"
+}
+
+
+
+###
+# Получить нужное количество сообщений(сейчас установленно 10, получим 10 или все если их меньше 10) 
+POST  http://localhost:4000/messages HTTP/1.1
+Authorization: Bearer_token
+content-type: "application/json"
+
+{ 
+  "name": "admin",
+  "message": "history 10"
+}
+
+
+
+###
+# Добавить сообщение и id пользователя(userId) в формате uuid
+POST  http://localhost:4000/messages HTTP/1.1
+Authorization: Bearer_token
+content-type: "application/json"
+
+{ 
+  "name": "admin",
+  "message": "Моё сообщение!",
+  "userId": "5b3f5302-0227-4e78-9ca0-41e701d50d81"
+}
