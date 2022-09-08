@@ -54,7 +54,11 @@ npm run lint
       <ul>
         <li><font color="4040ff">POST</font> <u>login</u> - get token <br> { <br> "name": "admin", <br> "password": "admin" <br> } </li> 
       </ul>
+      <ul>
+        <li><font color="green">GET</font> <u>login</u> - get user admin</li> 
+      </ul>
     </li>
+    <br>
     <li><h3><u>localhost:4000/users</u> - requires authorization(header: authorization Bearer_token)</h3> 
       <ul>
         <li><font color="4040ff">POST</font> <u>messages</u> - add user and get users  <br> { <br> "name": "admin", <br> "message": "Your message" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10", <br> "userId": "uuid of user" <br> } </li> 
