@@ -1,17 +1,17 @@
 import path from 'path';
 import { ConnectionOptions } from 'typeorm';
 import {
-  PORT_DB,
+  POSTGRES_PORT,
   POSTGRES_DB,
-  DB_HOST,
+  POSTGRES_HOST,
   POSTGRES_USER,
   POSTGRES_PASSWORD,
 } from './common/config';
 
 const config: ConnectionOptions = {
   type: 'postgres',
-  host: DB_HOST || 'postgres',
-  port: PORT_DB ? +PORT_DB : 5432,
+  host: POSTGRES_HOST || 'postgres',
+  port: POSTGRES_PORT ? +POSTGRES_PORT : 5432,
   username: POSTGRES_USER || 'postgres',
   password: POSTGRES_PASSWORD || 'postgres',
   database: POSTGRES_DB || 'postgres',

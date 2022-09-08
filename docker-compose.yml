@@ -1,0 +1,31 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:13.5'
+    container_name: postgres
+    build: 
+      context: ./database/.
+    networks:
+      - my_net
+    env_file: .env
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+  app:
+    image: app
+    container_name: server
+    build:
+      context: .
+    networks:
+      - my_net 
+    env_file: .env
+    ports:
+      - ${PORT}:${PORT}
+volumes:
+  pg_data:
+  logs:
+networks:
+  my_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.220.0/24
