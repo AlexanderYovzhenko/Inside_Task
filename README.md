@@ -17,6 +17,10 @@ npm install
 ```bash
 docker-compose up
 ```
+```bash
+npm run test
+```
+
 ## Running application local and bd in docker
 ### Need change POSTGRES_HOST=localhost in .env file
 ```bash
