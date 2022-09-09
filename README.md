@@ -79,9 +79,9 @@ npm run lint
       </ul>
     </li>
     <br>
-    <li><h3><u>localhost:4000/users</u> - requires authorization(header: authorization Bearer_token)</h3> 
+    <li><h3><u>localhost:4000/messages</u> - requires authorization(header: authorization Bearer_token)</h3> 
       <ul>
-        <li><font color="4040ff">POST</font> <u>messages</u> - add user and get users  <br> { <br> "name": "admin", <br> "message": "Your message" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10", <br> "userId": "uuid of user" <br> } </li> 
+        <li><font color="4040ff">POST</font> <u>messages</u> - add message and get messages  <br> { <br> "name": "admin", <br> "message": "Your message" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10" <br> } <br> or <br> { <br> "name": "admin", <br> "message": "history 10", <br> "userId": "uuid of user" <br> } </li> 
       </ul>
     </li>
 </ul>
