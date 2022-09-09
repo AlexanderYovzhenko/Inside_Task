@@ -15,6 +15,9 @@ npm install
 ## Running application in docker
 
 ```bash
+docker pull goldenmanbel/inside_task
+```
+```bash
 docker-compose up
 ```
 ```bash
