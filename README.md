@@ -15,10 +15,20 @@ npm install
 ## Running application in docker
 
 ```bash
+docker-compose up
+```
+or
+```bash
+docker build -t postgres database. 
+```
+```bash
+docker run -dp 5432:5432 --rm -e POSTGRES_HOST_AUTH_METHOD=trust postgres
+```
+```bash
 docker pull goldenmanbel/inside_task
 ```
 ```bash
-docker-compose up
+ docker run -d -p 8000:4000 goldenmanbel/inside_task
 ```
 ```bash
 npm run test
