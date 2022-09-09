@@ -7,13 +7,9 @@
   "scripts": {
     "start": "npm run migrations:run && nodemon --legacy-watch --exitcrash src/server.ts",
     "start:loc": "nodemon src/server.ts",
-    "start:ts": "npm run migrations:run && ts-node-dev src/server.ts",
-    "start:js": "tsc --project tsconfig.json && nodemon --experimental-specifier-resolution=node build/server.js",
     "build": "tsc --project tsconfig.json",
-    "start:build": "nodemon --experimental-specifier-resolution=node build/server.js",
     "lint": "eslint --ext .js,.ts --fix src/",
-    "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
-    "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
+    "test": "cross-env jest --watch --testMatch \"<rootDir>/test/*.test.js\" --noStackTrace --runInBand",
     "migrations:run": "npm run typeorm -- migration:run",
     "migration:generate": "npm run typeorm migration:generate -- -n migration",
     "typeorm": "npx node --require ts-node/register ./node_modules/typeorm/cli.js --config src/ormconfig.ts"
@@ -32,26 +28,29 @@
       "npm run lint"
     ]
   },
+  "eslintIgnore": [
+    "test", "build", "node_modules"
+  ],
   "bugs": {
     "url": "https://github.com/GoldenManBel/Inside_Task/issues"
   },
   "homepage": "https://github.com/GoldenManBel/Inside_Task#readme",
-  "dependencies": {   
-    "fastify": "3.24.1",
-    "dotenv": "10.0.0",
-    "cross-env": "7.0.3",
+  "dependencies": {
     "bcrypt": "5.0.1",
+    "cross-env": "7.0.3",
+    "dotenv": "10.0.0",
+    "fastify": "3.24.1",
     "jsonwebtoken": "8.5.1",
     "pg": "8.7.1",
     "typeorm": "0.2.41"
   },
   "devDependencies": {
-    "nodemon": "2.0.15",
+    "@types/bcrypt": "5.0.0",
     "@types/jsonwebtoken": "8.5.8",
     "@types/node": "8.0.29",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "5.5.0",
     "@typescript-eslint/parser": "5.5.0",
-    "@types/bcrypt": "5.0.0",
     "eslint": "8.2.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "8.3.0",
@@ -60,10 +59,14 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-tsdoc": "0.2.14",
     "fastify-plugin": "3.0.0",
+    "jest": "^29.0.2",
     "lint-staged": "12.0.3",
+    "nodemon": "2.0.15",
     "prettier": "2.4.1",
-    "typescript": "4.5.2",
+    "supertest": "^6.2.4",
+    "tap": "^16.3.0",
     "ts-node": "10.4.0",
-    "ts-node-dev": "1.1.8"
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.5.2"
   }
 }
