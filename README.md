@@ -26,6 +26,9 @@ docker build -t postgres database.
 docker run -dp 5432:5432 --rm -e POSTGRES_HOST_AUTH_METHOD=trust postgres
 ```
 ```bash
+npm run migration:generate
+```
+```bash
 npm run start
 ```
 
